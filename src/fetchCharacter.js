@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const fetchCharacter = async (id) => {
   // Recebemos como parâmetro o id
   try {
@@ -8,6 +10,7 @@ const fetchCharacter = async (id) => {
     const results = await promiseFetch.json();
 
     //Retornamos o resultado da nossa requisição
+    console.log(results);
     return results;
   } catch (error) {
     // Caso algo aconteça e nossa requisição não seja realizada com sucesso
@@ -15,6 +18,8 @@ const fetchCharacter = async (id) => {
     return error;
   }
 };
+
+fetchCharacter('720');
 
 // const fetchCharacter = async (id) => {
 //   const URL = `https://www.superheroapi.com/api.php/4192484924171229/${id}`;
